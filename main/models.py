@@ -19,3 +19,7 @@ class Goal_for_month(models.Model):
     month = models.CharField(max_length=50)
     difficulty = models.CharField(max_length=100) 
     reason_for_goal = models.CharField(max_length=50)  
+
+
+    def __str__(self):
+            return 'Goal_for_month: {}' .format(self.goal) 

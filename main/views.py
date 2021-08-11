@@ -1,4 +1,6 @@
-from django.shortcuts import render, HttpResponse, Goal_for_month
+from django.shortcuts import render, HttpResponse
+from.models import Goal_for_month
+
 
 def homepage(request):
     return render(request, "index.html")
@@ -14,4 +16,4 @@ def second(request):
 
 def goal(request):
     news = Goal_for_month.objects.all()
-    return render(request, news)
+    return render(request, 'news.html', {'news': news})
