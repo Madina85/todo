@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.views.generic import TemplateView
 from.models import Goal_for_month
 
 
@@ -14,6 +15,11 @@ def test (request):
 def second(request):
     return HttpResponse("test 2 page") 
 
-def goal(request):
-    news = Goal_for_month.objects.all()
-    return render(request, 'news.html', {'news': news})
+class   Goal_for_month(TemplateView):
+    template_name = 'news.html'
+    def get_context_data(self, **kwargs):
+        records =  Goal_for_month.objects.all()
+        context = dict(records = records)
+        return context  
+
+

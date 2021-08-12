@@ -8,6 +8,21 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+        <div class="block">
+            <h2> "О цели" </h2>
+            <hr/>
+            
+            {% for record in records %}
+                <h2>{{ record.goal}}</h2>
+                <p> {{ record.month}}</p>
+                <p> {{ record.difficulty}}</p>
+                <p> {{ record.reason_for_goal}}</p>
+                <hr/>
+            {% end for %}    
+        </div>
+
+    </div>
     {{ news }}
 </body>
 </html>
