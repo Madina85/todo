@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static '.styles/test.css' %}">
-    <!-- <script src="./my.js"></script> -->
+    <!-- <link rel="stylesheet" href="{% static '.styles/test.css' %}"> -->
+   
 </head>
-<body class="body">
+<body>
     
     <h2>Это текстовая страница</h2>
-    <ul>
-        <li>Открываем статистические файлы  в папке main.(стили,медиа)</li>
-        <li>название папки должно быть "static"</li>
-        <li>Что бы потключиться к статистическому файлу в html документе самом верху должны записать {% load static%} </li>
-        <li> link rel="stylesheet" href="{% static 'styles/test.css' %}"</li>
-        <li> В settings.py пишем "STATIC_URL = '/static/'    STATIC_ROOT = BASE_DIR / 'static'</li>
-      
-    </ul>
+    {% for todo in todo_list %}
+    
+        <h3>{{todo.text }} - {{todo.created_at}}</h3>
+    
+    {% end for %}
    
 </body>
 </html>

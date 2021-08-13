@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import TemplateView
-from.models import Goal_for_month
+from .models import ToDo
+from .models import Goal_for_month
+
 
 
 def homepage(request):
@@ -9,7 +11,8 @@ def homepage(request):
 
 
 def test (request):
-    return render(request, 'test.html')
+    todo_list = ToDo.objects.all()
+    return render(request, 'test.html', {"ToDo_list":todo_list})
 
 
 def second(request):
