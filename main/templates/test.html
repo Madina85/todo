@@ -1,4 +1,4 @@
-(% read static %)
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
     <!-- <link rel='stylesheet' href='./styles/index.css' /> -->
     <link rel='stylesheet' href="{% static 'styles/index.css' %}" />
     <!-- <link rel ="stylesheet" href = "./styles/checkbox.css" /> -->
-<link rel ="stylesheet" href ="{% static /'styles/checkbox.css'/ %}" />
+<link rel ="stylesheet" href ="{% static 'styles/checkbox.css'/ %}" />
 
 </head>
 <body>
@@ -17,7 +17,7 @@
    
     <section>
         <div class="create_container">
-            (% for todo in todo_list %)
+            {% for todo in todo_list %}
             <input
             class="create_input"
             type="text"
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-           (% endfor %)
+           {% endfor %}
           </div> 
     </section>
    
