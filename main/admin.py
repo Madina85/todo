@@ -7,5 +7,5 @@ from .models import Goal_for_month
 
 admin.site.register(ToDo)
 admin.site.register(ToMeet)
-admin.site.register(Goal_for_month)
+# admin.site.register(Goal_for_month)
 

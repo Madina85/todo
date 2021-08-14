@@ -18,11 +18,11 @@ def test (request):
 def second(request):
     return HttpResponse("test 2 page") 
 
-class   Goal_for_month(TemplateView):
-    template_name = 'news.html'
-    def get_context_data(self, **kwargs):
-        records =  Goal_for_month.objects.all()
-        context = dict(records = records)
-        return context  
+# class   Goal_for_month(TemplateView):
+#     template_name = 'news.html'
+#     def get_context_data(self, **kwargs):
+#         records =  Goal_for_month.objects.all()
+#         context = dict(records = records)
+#         return context  
 
 
